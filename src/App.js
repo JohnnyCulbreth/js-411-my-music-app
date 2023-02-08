@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
-import OutlinedCard from './components/Dashboard';
+import Dashboard from './components/Dashboard';
+import welcomeback from './welcomeback.png';
 
 function App(props) {
   const [loggedIn, setLoggedIn] = React.useState(false);
@@ -20,18 +21,10 @@ function App(props) {
     <div className='App'>
       <ResponsiveAppBar />
       <header className='App-header'>
-        <h2>Welcome back!</h2>
+        <img src={welcomeback} style={{ width: 400, height: 92, margin: 5 }} />
         <div className='content'>
-          <div className='cards'>
-            <div className='displaycard'>
-              <OutlinedCard />
-            </div>
-            <div className='displaycard'>
-              <OutlinedCard />
-            </div>
-            <div className='displaycard'>
-              <OutlinedCard />
-            </div>
+          <div className='dashboard'>
+            <Dashboard />
           </div>
         </div>
       </header>

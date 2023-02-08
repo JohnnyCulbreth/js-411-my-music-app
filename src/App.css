@@ -20,3 +20,15 @@
 .displaycard {
   margin: 2vw;
 }
+
+.switch {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.slider {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
