@@ -34,6 +34,7 @@ export default function VolumeCard() {
             >
               <VolumeDown />
               <Slider
+                sx={{ color: '#5C946E' }}
                 aria-label='Volume'
                 value={value}
                 onChange={handleChange}

@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import musicapp from './musicapp.png';
+import musicapp from './img/musicapp.png';
 
 function ResponsiveAppBar() {
   return (

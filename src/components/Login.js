@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import musicappgreen from './musicappgreen.png';
+import musicappgreen from './img/musicappgreen.png';
 
 export default function Login() {
   const { setLoggedIn } = useContext(LoginContext);
@@ -56,7 +56,6 @@ export default function Login() {
             <Button
               variant='contained'
               sx={{
-                borderRadius: 50,
                 backgroundColor: '#bfd8cd',
                 marginBottom: 3,
                 '&:hover': {

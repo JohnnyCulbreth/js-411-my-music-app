@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, createContext } from 'react';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Dashboard from './components/Dashboard';
-import welcomeback from './welcomeback.png';
+import welcomeback from './components/img/welcomeback.png';
 import Login from './components/Login';
 
 export const LoginContext = createContext({
