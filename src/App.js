@@ -1,34 +1,46 @@
 import './App.css';
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Dashboard from './components/Dashboard';
 import welcomeback from './welcomeback.png';
+import Login from './components/Login';
+
+export const LoginContext = createContext({
+  loggedIn: false,
+  setLoggedIn: () => {},
+});
 
 function App(props) {
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setLoggedIn(true);
-  };
+  //Build Login form that 'handleClick's the Submit button to setLoggedIn to true
 
-  return loggedIn ? (
-    <div className='App'>
-      <ResponsiveAppBar />
-      <header className='App-header'></header>
-    </div>
-  ) : (
-    <div className='App'>
-      <ResponsiveAppBar />
-      <header className='App-header'>
-        <img src={welcomeback} style={{ width: 400, height: 92, margin: 5 }} />
-        <div className='content'>
-          <div className='dashboard'>
-            <Dashboard />
-          </div>
+  return (
+    <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
+      {loggedIn ? (
+        <div className='App'>
+          <ResponsiveAppBar />
+          <header className='App-header'>
+            <Login />
+          </header>
         </div>
-      </header>
-    </div>
+      ) : (
+        <div className='App'>
+          <ResponsiveAppBar />
+          <header className='App-header'>
+            <img
+              src={welcomeback}
+              style={{ width: 400, height: 92, margin: 5 }}
+            />
+            <div className='content'>
+              <div className='dashboard'>
+                <Dashboard />
+              </div>
+            </div>
+          </header>
+        </div>
+      )}
+    </LoginContext.Provider>
   );
 }
 
