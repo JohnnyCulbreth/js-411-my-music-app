@@ -9,7 +9,7 @@ function ResponsiveAppBar() {
     <AppBar position='static' style={{ background: '#5C946E' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <img src={musicapp} style={{ width: 150, height: 55, margin: 5 }} />
+          <img src={musicapp} style={{ width: 165, height: 55, margin: 10 }} />
         </Toolbar>
       </Container>
     </AppBar>

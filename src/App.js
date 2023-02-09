@@ -13,8 +13,6 @@ export const LoginContext = createContext({
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(true);
 
-  //Build Login form that 'handleClick's the Submit button to setLoggedIn to true
-
   return (
     <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
       {loggedIn ? (

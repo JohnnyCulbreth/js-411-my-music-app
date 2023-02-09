@@ -7,9 +7,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import musicappgreen from './musicappgreen.png';
 
 export default function Login() {
-  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+  const { setLoggedIn } = useContext(LoginContext);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -19,6 +20,10 @@ export default function Login() {
   return (
     <Card sx={{ minWidth: 275, minHeight: 275 }}>
       <CardContent>
+        <img
+          src={musicappgreen}
+          style={{ width: 240, height: 80, margin: 5 }}
+        />
         <Box
           component='form'
           sx={{
@@ -45,9 +50,24 @@ export default function Login() {
           </div>
         </Box>
       </CardContent>
-      <CardActions>
+      <CardActions style={{ justifyContent: 'center' }}>
         <Stack spacing={2} direction='row'>
-          <Button onClick={handleClick}>Log in</Button>
+          <div className='loginbutton'>
+            <Button
+              variant='contained'
+              sx={{
+                borderRadius: 50,
+                backgroundColor: '#bfd8cd',
+                marginBottom: 3,
+                '&:hover': {
+                  background: '#5C946E',
+                },
+              }}
+              onClick={handleClick}
+            >
+              Log in
+            </Button>
+          </div>
         </Stack>
       </CardActions>
     </Card>
