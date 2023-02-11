@@ -4,32 +4,42 @@ import VolumeCard from './VolumeCard';
 import SoundCard from './SoundCard';
 
 function Dashboard() {
-  const [online, setOnline] = useState(false);
-  const [volume, setVolume] = useState(20);
-  const [quality, setQuality] = useState('high');
+  const [online, setOnline] = useState(true);
+  const [value, setVolume] = useState(20);
+  const [quality, setQuality] = useState(2);
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() => {
-    let newNotifications = [];
+  let newNotifications = [];
 
+  useEffect(() => {
     if (!online) {
       newNotifications.push(
         "Your application is offline. You won't be able to share or stream music to other devices."
       );
     }
-    if (volume > 80) {
+
+    setNotifications(newNotifications);
+  }, [online]);
+
+  useEffect(() => {
+    if (value > 80) {
       newNotifications.push(
         'Listening to music at a high volume could cause long-term hearing loss.'
       );
     }
-    if (quality === 'low') {
+
+    setNotifications(newNotifications);
+  }, [value]);
+
+  useEffect(() => {
+    if (quality === 1) {
       newNotifications.push(
         'Music quality is degraded. Increase quality if your connection allows it.'
       );
     }
 
     setNotifications(newNotifications);
-  }, [online, volume, quality]);
+  }, [quality]);
 
   return (
     <div className='dashwrapper'>
@@ -38,7 +48,7 @@ function Dashboard() {
           <SwitchCard online={online} setOnline={setOnline} />
         </div>
         <div className='displaycard'>
-          <VolumeCard volume={volume} setVolume={setVolume} />
+          <VolumeCard value={value} setVolume={setVolume} />
         </div>
         <div className='displaycard'>
           <SoundCard quality={quality} setQuality={setQuality} />

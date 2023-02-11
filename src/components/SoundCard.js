@@ -7,9 +7,7 @@ import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
-export default function SoundCard() {
-  const [quality, setQuality] = React.useState(2);
-
+export default function SoundCard({ quality, setQuality }) {
   const handleChange = (event) => {
     setQuality(event.target.value);
   };
