@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SwitchCard from './SwitchCard';
 import VolumeCard from './VolumeCard';
 import SoundCard from './SoundCard';
+import system from './img/system.png';
 
 function Dashboard() {
   const [online, setOnline] = useState(true);
@@ -55,7 +56,7 @@ function Dashboard() {
         </div>
       </div>
       <div>
-        <h2>System Notifications:</h2>
+        <img src={system} style={{ width: 500, height: 62, margin: 5 }} />
         {notifications.map((notification, index) => (
           <p key={index}>{notification}</p>
         ))}
