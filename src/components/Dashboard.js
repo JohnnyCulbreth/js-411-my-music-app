@@ -55,7 +55,7 @@ function Dashboard() {
           <SoundCard quality={quality} setQuality={setQuality} />
         </div>
       </div>
-      <div>
+      <div className='systemnotis'>
         <img src={system} style={{ width: 500, height: 62, margin: 5 }} />
         {notifications.map((notification, index) => (
           <p key={index}>{notification}</p>
