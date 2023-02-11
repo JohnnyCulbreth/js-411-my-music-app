@@ -7,7 +7,11 @@ import Switch from '@mui/material/Switch';
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-export default function SwitchCard() {
+export default function SwitchCard({ online, setOnline }) {
+  const handleChange = () => {
+    setOnline(!online);
+  };
+
   return (
     <Card sx={{ minWidth: 275, minHeight: 275 }}>
       <CardContent>
@@ -17,7 +21,7 @@ export default function SwitchCard() {
       </CardContent>
       <CardActions>
         <div className='switch'>
-          <Switch {...label} />
+          <Switch {...label} checked={online} onChange={handleChange} />
         </div>
       </CardActions>
     </Card>

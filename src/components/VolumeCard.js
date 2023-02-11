@@ -10,10 +10,10 @@ import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
 
 export default function VolumeCard() {
-  const [value, setValue] = React.useState(30);
+  const [volume, setVolume] = React.useState(20);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setVolume(newValue);
   };
 
   return (
@@ -36,7 +36,7 @@ export default function VolumeCard() {
               <Slider
                 sx={{ color: '#5C946E' }}
                 aria-label='Volume'
-                value={value}
+                value={volume}
                 onChange={handleChange}
               />
               <VolumeUp />
